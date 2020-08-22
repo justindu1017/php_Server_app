@@ -2,7 +2,7 @@
  <?php
    include_once "includes/dbh.inc.php";
 
-   $articalID = "???"
+   $articalID = "???";
    $userName = "???";
    $passWord = "???";
    $title = "???";
@@ -14,7 +14,7 @@
 
    if(!mysqli_stmt_prepare($stmt, $query)){
      echo "err!!! prepare wrong";
-     echo "test"
+     echo "test";
    }else {
      // code...
      //date is ??, boolean is B?
