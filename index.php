@@ -3,7 +3,7 @@
   
 
   //check if is post
-  if(isset($_POST['userName'] && $_POST['passWord']&& $_POST['eMail']&& $_POST['birthDay']){
+  if(isset($_POST['userName']) &&isset( $_POST['passWord'])&& isset($_POST['eMail'])&& isset($_POST['birthDay'])){
     $userName = $_POST['userName'];
     $passWord = $_POST['passWord'];
     //$eMail =  $_POST['eMail'];
