@@ -1,9 +1,17 @@
 <?php
   include_once "includes/dbh.inc.php";
   
-  $userName = "kallen";
-  $passWord = "Du";
-  $response = array();
+
+  //check if is post
+  if(isset($_POST['userName'] && $_POST['passWord']&& $_POST['eMail']&& $_POST['birthDay']){
+    $userName = $_POST['userName'];
+    $passWord = $_POST['passWord'];
+    //$eMail =  $_POST['eMail'];
+    //$birthDay =$_POST['birthDay'];
+    $response = array();
+  }
+
+
 
   $query = "select * from usert where userName = ? and passWord = ?";
 
