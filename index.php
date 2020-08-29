@@ -1,8 +1,6 @@
 <?php
   include_once "includes/dbh.inc.php";
    
-
-  //check if is post
   if(isset($_POST['userName']) &&isset($_POST['passWord'])){
     $userName = $_POST['userName'];
     $passWord = $_POST['passWord'];
