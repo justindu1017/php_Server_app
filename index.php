@@ -1,10 +1,14 @@
 <?php
   include_once "includes/dbh.inc.php";
-   
+  $response = array();
   if(isset($_POST['userName']) &&isset($_POST['passWord'])){
     $userName = $_POST['userName'];
     $passWord = $_POST['passWord'];
-    $response = array();
+  }else{
+    $response["success"] = 0;
+    $response["ErrMsg"] = "err!!! Post Method wrong!!! please contect official";
+    echo json_encode($response);
+    mysqli_close($conn);
   }
 
 
@@ -18,6 +22,7 @@
     $response['result'] = 0;
     $response['errMsg'] = "err!!! prepare wrong!!! please contect offical";
     echo json_encode($response);
+    mysqli_close($conn);
   }else {
     mysqli_stmt_bind_param($stmt,"ss",$userName, $passWord);
     mysqli_stmt_execute($stmt);
@@ -34,11 +39,13 @@
         $response['eMail']=$eMail;
 
         echo json_encode($response);
+        mysqli_close($conn);
       } 
     }else {
       $response['result'] = 0;
       $response['errMsg'] = "找不到相關帳號，請確認帳密是否有誤";
       echo json_encode($response);
+      mysqli_close($conn);
     }
   }
  ?>
