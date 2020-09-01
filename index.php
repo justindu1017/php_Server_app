@@ -43,7 +43,7 @@
       } 
     }else {
       $response['result'] = 0;
-      $response['errMsg'] = "找不到相關帳號，請確認帳密是否有誤";
+      $response['ErrMsg'] = "找不到帳號，請確認帳密是否有誤";
       echo json_encode($response);
       mysqli_close($conn);
     }
