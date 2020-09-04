@@ -10,7 +10,7 @@
         $response["ErrMsg"] = "err!!! Post Method wrong!!! please contect official";
         echo json_encode($response);
 
-      }
+      }   
 
     $query = "insert into usert (userName, passWord, eMail) values (?,?,?)";
 
