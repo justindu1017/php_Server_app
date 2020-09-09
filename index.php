@@ -20,7 +20,7 @@
   if(!mysqli_stmt_prepare($stmt, $query)){
     echo "err!!! prepare wrong";
     $response['result'] = 0;
-    $response['errMsg'] = "err!!! prepare wrong!!! please contect offical";
+    $response['ErrMsg'] = "err!!! prepare wrong!!! please contect offical";
     echo json_encode($response);
     mysqli_close($conn);
   }else {
