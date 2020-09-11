@@ -6,7 +6,7 @@
         $registPassword = $_POST['registPassword'];
         $registMail = $_POST['registMail'];
     }else{
-        $response["success"] = 0;
+        $response["result"] = 0;
         $response["ErrMsg"] = "err!!! Post Method wrong!!! please contect official";
         echo json_encode($response);
       }   

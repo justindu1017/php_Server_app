@@ -5,7 +5,7 @@
     $userName = $_POST['userName'];
     $passWord = $_POST['passWord'];
   }else{
-    $response["success"] = 0;
+    $response["result"] = 0;
     $response["ErrMsg"] = "err!!! Post Method wrong!!! please contect official";
     echo json_encode($response);
     mysqli_close($conn);
@@ -32,7 +32,7 @@
     if(mysqli_stmt_num_rows($stmt) ){
       while(mysqli_stmt_fetch($stmt)){
         $response['result']=1;
-        $response['successMsg']="Login success";
+        $response['successMsg']="Login success!";
         $response['UID']=$UID;
         $response['userName']=$userName;
         $response['passWord']=$passWord;
