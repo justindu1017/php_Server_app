@@ -9,12 +9,7 @@
         $response["result"] = 0;
         $response["ErrMsg"] = "err!!! Post Method wrong!!! please contect official";
         echo json_encode($response);
-      }   
-
-
-    // $registUsername = "Justin2";
-    // $registPassword = "Selene2";
-    // $registMail = "email2@email.com";
+      } 
 
     $query = "insert into usert (userName, passWord, eMail) values (?,?,?)";
 
