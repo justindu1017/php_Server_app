@@ -18,7 +18,7 @@
 
 
 
-    $query = "insert into usert (userName, passWord, eMail) values (?,?,?)";
+    $query = "insert into T_artical (userName, eMail, articalTitle, articalContent) values (?,?,?,?)";
 
     $stmt  = mysqli_stmt_init($conn);
 
@@ -29,7 +29,7 @@
         echo json_encode($response);
         mysqli_close($conn);
       }else {
-        mysqli_stmt_bind_param($stmt,"sss",$registUsername, $registPassword, $registMail);
+        mysqli_stmt_bind_param($stmt,"ssss", $userName, $eMail, $articalTitle, $articalContent);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_store_result($stmt);
 
