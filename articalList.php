@@ -77,7 +77,6 @@
 
             }else{
                 $response['result'] = 1;
-                $response['enter'] = "eee";
                 if(mysqli_stmt_num_rows($stmt) ){
                   while(mysqli_stmt_fetch($stmt)){
                     $response['articalContent'] = $articalContent;
