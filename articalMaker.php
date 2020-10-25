@@ -18,7 +18,7 @@
 
 
 
-    $query = "insert into T_artical (userName, eMail, articalTitle, articalContent, CDate) values (?,?,?,?,now())";
+    $query = "insert into T_artical (userName, eMail, articalTitle, articalContent) values (?,?,?,?)";
 
     $stmt  = mysqli_stmt_init($conn);
 
