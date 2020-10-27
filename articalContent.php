@@ -13,7 +13,7 @@
 
 
   // $query = "select articalContent from T_artical where AID = ?";
-  $query = "select articalContent from T_artical where AID = 1000000";
+  $query = "select articalContent from T_artical where AID = ?";
   $stmt = mysqli_stmt_init($conn);
 
   if(!mysqli_stmt_prepare($stmt, $query)){
@@ -23,7 +23,7 @@
     echo json_encode($response);
     mysqli_close($conn);
   }else {
-    // mysqli_stmt_bind_param($stmt,"s",$articalContent);
+    mysqli_stmt_bind_param($stmt,"s",$AID);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_bind_result($stmt, $articalContent);
     mysqli_stmt_store_result($stmt);
@@ -39,8 +39,11 @@
     }else {
       $response['result'] = 0;
       $response['ErrMsg'] = "找不到文章";
+      $response['Query'] =  $stmt;
       echo json_encode($response);
       mysqli_close($conn);
     }
+
+
   }
  ?>
