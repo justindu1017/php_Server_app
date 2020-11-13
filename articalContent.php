@@ -11,7 +11,7 @@
   }
 
 
-  $query = "select articalContent from t_artical where AID  = ?";
+  $query = "select articalContent from t_artical where AID = ?";
   $stmt = mysqli_stmt_init($conn);
 
   if(!mysqli_stmt_prepare($stmt, $query)){
