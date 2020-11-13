@@ -13,12 +13,11 @@
       }   
 
 
-    $query = "Select AID, userName, articalTitle, CDate from t_artical ORDER BY CDate Limit 10 OFFSET ? ";
-
+    // $query = "select AID, userName, articalTitle, CDate from t_artical ORDER BY CDate Limit 10 OFFSET ? ";
+    $query = "select AID, userName, articalTitle, CDate from t_artical ";
     $stmt  = mysqli_stmt_init($conn);
 
     if(!mysqli_stmt_prepare($stmt, $query)){
-        // echo "err!!! prepare wrong!!!!!!!";
         $response['result'] = 0;
         $response['ErrMsg'] = "err!!! prepare wrong!!! please contect offical";
         echo json_encode($response);
