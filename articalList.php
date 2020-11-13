@@ -13,7 +13,7 @@
       }   
 
 
-    $query = "Select AID, userName, articalTitle, CDate from T_artical ORDER BY CDate Limit 10 OFFSET ? ";
+    $query = "Select AID, userName, articalTitle, CDate from t_artical ORDER BY CDate Limit 10 OFFSET ? ";
 
     $stmt  = mysqli_stmt_init($conn);
 
