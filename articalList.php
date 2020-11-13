@@ -13,7 +13,7 @@
       }   
 
 
-    // $query = "select AID, userName, articalTitle, CDate from t_artical ORDER BY CDate";
+    $query = "select AID, userName, articalTitle, CDate from t_artical ORDER BY CDate";
     // $query = "select AID, userName, articalTitle, CDate from t_artical ";
     $stmt  = mysqli_stmt_init($conn);
 
