@@ -16,12 +16,12 @@
         echo json_encode($response);
       }   
 
-    $query = "insert into T_artical (userName, eMail, articalTitle, articalContent, CDate) values (?,?,?,?,now())";
+    $query = "insert into t_artical (userName, eMail, articalTitle, articalContent, CDate) values (?,?,?,?,now())";
 
     $stmt  = mysqli_stmt_init($conn);
 
     if(!mysqli_stmt_prepare($stmt, $query)){
-        echo "err!!! prepare wrong!!!!!!!";
+        // echo "err!!! prepare wrong!!!!!!!";
         $response['result'] = 0;
         $response['ErrMsg'] = "err!!! prepare wrong!!! please contect offical";
         echo json_encode($response);
