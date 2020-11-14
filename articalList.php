@@ -12,8 +12,8 @@
         echo json_encode($response);
       }   
 
-
-    $query = "select AID, userName, articalTitle, CDate from t_artical ORDER BY CDate";
+    $query = "Select AID, userName, articalTitle, CDate from t_artical ORDER BY CDate Limit 2 OFFSET ?";
+    // $query = "select AID, userName, articalTitle, CDate from t_artical ORDER BY CDate";
     // $query = "select AID, userName, articalTitle, CDate from t_artical ";
     $stmt  = mysqli_stmt_init($conn);
 
