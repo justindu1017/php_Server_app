@@ -27,7 +27,7 @@
         $hash = password_hash($registPassword, PASSWORD_DEFAULT);
         $response['pass'] = $hash;
         $response['passssssss'] = $registPassword;
-        password_verify($registPassword,$hash);
+        $response['passsssssssssss'] =password_verify($registPassword,$hash);
         // mysqli_stmt_bind_param($stmt,"sss",$registUsername, $registPassword, $registMail);
         mysqli_stmt_bind_param($stmt,"sss",$registUsername, $hash, $registMail);
         mysqli_stmt_execute($stmt);
