@@ -46,12 +46,12 @@
 
                 echo json_encode($response);
                 mysqli_close($conn);
-        }else {
-          $response['result'] = 0;
-          $response['ErrMsg'] = "找不到帳號，請確認帳密是否有誤";
-          echo json_encode($response);
-          mysqli_close($conn);
-        }
+        // }else {
+        //   $response['result'] = 0;
+        //   $response['ErrMsg'] = "找不到帳號，請確認帳密是否有誤";
+        //   echo json_encode($response);
+        //   mysqli_close($conn);
+        // }
       } 
     }else {
       $response['result'] = 0;
