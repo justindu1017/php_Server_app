@@ -33,7 +33,8 @@
     
     if(mysqli_stmt_num_rows($stmt) ){
       while(mysqli_stmt_fetch($stmt)){
-        if(password_verify($passWordP,$passWord)){
+        echo  $response['verify']=password_verify($passWordP,$passWord);
+        // if(password_verify($passWordP,$passWord)){
           // echo $passWord;
           // if(password_verify($passWordP,"$2y$10\$m//r19eDDCiL8dbP9L8RIuJg/Klt896RHOP.TM7DQ6P2k2ADW2.DG")){
                 $response['result']=1;
