@@ -54,7 +54,8 @@
       } 
     }else {
       $response['result'] = 0;
-      $response['ErrMsg'] = "找不到帳號，請確認帳密是否有誤";
+      $response['ErrMsg'] = "找不到帳號，請確認帳密是否有誤222222";
+      $response['NUM'] = "second";
       echo json_encode($response);
       mysqli_close($conn);
     }
