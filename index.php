@@ -35,7 +35,7 @@
       while(mysqli_stmt_fetch($stmt)){
         
           $response['verify']=password_verify($passWordP,$passWord);
-        // if(password_verify($passWordP,$passWord)){
+        if(password_verify($passWordP,$passWord)){
           // echo $passWord;
           // if(password_verify($passWordP,"$2y$10\$m//r19eDDCiL8dbP9L8RIuJg/Klt896RHOP.TM7DQ6P2k2ADW2.DG")){
                 $response['result']=1;
@@ -47,12 +47,12 @@
 
                 echo json_encode($response);
                 mysqli_close($conn);
-        // }else {
-        //   $response['result'] = 0;
-        //   $response['ErrMsg'] = "找不到帳號，請確認帳密是否有誤";
-        //   echo json_encode($response);
-        //   mysqli_close($conn);
-        // }
+        }else {
+          $response['result'] = 0;
+          $response['ErrMsg'] = "找不到帳號，請確認帳密是否有誤";
+          echo json_encode($response);
+          mysqli_close($conn);
+        }
       } 
     }else {
       $response['result'] = 0;
