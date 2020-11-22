@@ -13,8 +13,8 @@
 
 
 
-  $query = "select UID, userName, passWord, email from usert where userName = ? and passWord = ?";
-
+  // $query = "select UID, userName, passWord, email from usert where userName = ? and passWord = ?";
+  $query = "select UID, userName, email from usert where userName = ? and passWord = ?";
   $stmt = mysqli_stmt_init($conn);
 
   if(!mysqli_stmt_prepare($stmt, $query)){
@@ -24,7 +24,9 @@
     echo json_encode($response);
     mysqli_close($conn);
   }else {
-    mysqli_stmt_bind_param($stmt,"ss",$userName, $passWord);
+    $hash = password_hash($passWord, PASSWORD_DEFAULT);
+    mysqli_stmt_bind_param($stmt,"ss",$userName, $hash);
+    // mysqli_stmt_bind_param($stmt,"ss",$userName, $passWord);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_bind_result($stmt, $UID, $userName, $passWord, $eMail);
     mysqli_stmt_store_result($stmt);
@@ -35,7 +37,7 @@
         $response['successMsg']="Login success";
         $response['UID']=$UID;
         $response['userName']=$userName;
-        $response['passWord']=$passWord;
+        // $response['passWord']=$passWord;
         $response['eMail']=$eMail;
 
         echo json_encode($response);
