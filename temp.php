@@ -1,26 +1,9 @@
 <?php
-  include_once "includes/dbh.inc.php";
-    $pass = "Justin";
-    $query = "select UID, userName from usert where passWord = ?";
-    $stmt = mysqli_stmt_init($conn);
+    $String = "123";
 
-    if(!mysqli_stmt_prepare($stmt, $query)){
-        echo "err!!! prepare wrong";
-    }else {
-        mysqli_stmt_bind_param($stmt,"s", $pass);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $UID, $userName);
-        mysqli_stmt_store_result($stmt);
-        if(mysqli_stmt_num_rows($stmt)>0){
-            while(mysqli_stmt_fetch($stmt)){
-                $id = $UID;
-                $NAM = $userName;
-                printf ("%s (%s)\n", $NAM, $id);
-                echo "\nhas value";
-            }
-        }else{
-            echo "no value";
-        }
-    }
-    mysqli_close($conn);
- ?>
+    $hash = password_hash($String,PASSWORD_DEFAULT);
+    // echo $hash;
+    echo "                                \\\\                          "  ;
+    echo password_verify("123","$2y$10\$GwB6z.QRS29Vh9tfuO1LXe864ET3dgbSrPkbNucCtD9Ke2I3zooMS");
+    
+?>
