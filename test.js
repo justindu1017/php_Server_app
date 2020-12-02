@@ -11,20 +11,20 @@
 //     console.log("message = "+message);
 // })
 
-var p1 = new Promise((resolve) => {
-  resolve("巨錘瑞斯");
-});
+// var p1 = new Promise((resolve) => {
+//   resolve("巨錘瑞斯");
+// });
 
-function p2(hammer) {
-  return new Promise((resolve) => {
-    hammer = hammer + " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    resolve(hammer);
-  });
-}
+// function p2(hammer) {
+//   return new Promise((resolve) => {
+//     hammer = hammer + " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+//     resolve(hammer);
+//   });
+// }
 
-p1.then(p2).then((mess)=>{
-    console.log("mess is "+mess);
-})
+// p1.then(p2).then((mess)=>{
+//     console.log("mess is "+mess);
+// })
 
 // p1.then((mess) => {
 //   console.log("mess is " + mess);
@@ -72,3 +72,42 @@ p1.then(p2).then((mess)=>{
 
 
 */
+
+var mysql = require("mysql");
+
+var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "ee_project"
+});
+
+con.connect((err) =>{
+    if (err) throw err;
+    console.log("OKK");
+});
+
+var str = "1'='1' OR '1'='1";
+var str2 = "AAAbbbbbb";
+var str3 = "a');Select * from usert;-- ";
+
+
+// con.query("  Select * from usert;",(err, query)=>{
+//         if (err) throw err;
+//         console.log(query);
+//     })
+con.query("insert into usert (userName, passWord, email) values ('binj', 'AAAbbbbbb', 'wgeak');  Select * from usert; #')",(err)=>{
+    if (err) throw err;
+    // console.log(query[0]);
+})
+// con.query("select * from usert where userName = '"+str+"'",(err, query)=>{
+//     if (err) throw err;
+//     console.log(query);
+// })
+con.query("#insert into usert (userName, passWord, email) values (?,?,?)",[str,str,str],(err, query)=>{
+    if (err) throw err;
+    console.log(query);
+})
+
+
+con.end();

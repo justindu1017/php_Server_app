@@ -11,7 +11,7 @@
   }
 
 
-  $query = "select articalContent from t_artical where AID = ?";
+  $query = "select articalContent,hasAnswer from t_artical where AID = ?";
   $stmt = mysqli_stmt_init($conn);
 
   if(!mysqli_stmt_prepare($stmt, $query)){
@@ -30,7 +30,7 @@
       while(mysqli_stmt_fetch($stmt)){
         $response['result']=1;
         $response['articalContent']=$articalContent;
-
+        $response['hasAnswer']=$hasAnswer;
         echo json_encode($response);
         mysqli_close($conn);
       } 
