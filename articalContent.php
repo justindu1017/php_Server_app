@@ -11,7 +11,7 @@
   }
 
 
-  $query = "select articalContent,hasAnswer from t_artical where AID = ?";
+  $query = "Select articalContent, hasAnswer from t_artical where AID = ?";
   $stmt = mysqli_stmt_init($conn);
 
   if(!mysqli_stmt_prepare($stmt, $query)){
@@ -23,7 +23,7 @@
   }else {
     mysqli_stmt_bind_param($stmt,"s",$AID);
     mysqli_stmt_execute($stmt);
-    mysqli_stmt_bind_result($stmt, $articalContent);
+    mysqli_stmt_bind_result($stmt, $articalContent,$hasAnswer);
     mysqli_stmt_store_result($stmt);
     
     if(mysqli_stmt_num_rows($stmt) ){
